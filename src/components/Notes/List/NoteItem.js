@@ -7,7 +7,7 @@ import { showFormattedDate } from "../../../utils";
 
 const NoteItem = ({ id, title, createdAt, body, archived }) => {
   const isBodyFaded = (bodyLength) => {
-    return bodyLength > 100 ? "faded" : "";
+    return bodyLength > 70 ? "faded" : "";
   };
   return (
     <article className="note-item">

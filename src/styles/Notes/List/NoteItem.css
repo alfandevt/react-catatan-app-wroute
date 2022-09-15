@@ -48,11 +48,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(
-    to top,
-    #ffe4c4 25%,
-    transparent 100%
-  );
+  background: linear-gradient(to top, #ffe4c4 25%, transparent 100%);
 }
 
 .note-item__action {
@@ -94,6 +90,9 @@
 }
 
 @media (min-width: 1200px) {
+  .note-item {
+    height: 22rem;
+  }
   .note-item:hover {
     transform: scale(1.1);
     box-shadow: 0.1rem 0.1rem 1rem #000;
