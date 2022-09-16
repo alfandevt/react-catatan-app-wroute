@@ -9,7 +9,7 @@ import NoteTitleInput from "./NoteTitleInput";
 import NoteContentEditable from "./NoteContentEditable";
 import NoteCommandGroup from "./NoteCommandGroup";
 
-const NoteForm = ({ id, title, body, editMode }) => {
+const NoteForm = ({ id, title, body, archived, editMode }) => {
   const navigate = useNavigate();
   const [noteTitle, setNoteTitle] = useState("");
   const [noteBody, setNoteBody] = useState("");
@@ -43,7 +43,9 @@ const NoteForm = ({ id, title, body, editMode }) => {
     } else {
       editNote({ id, title: noteTitle, body: noteBody });
     }
-    navigate("/");
+
+    const urlPath = archived ? "/catatan-arsip" : "/";
+    navigate(urlPath);
   };
   const onCancelHandler = () => {
     navigate(-1);
@@ -104,6 +106,7 @@ NoteForm.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
   body: PropTypes.string,
+  archived: PropTypes.bool,
   editMode: PropTypes.bool.isRequired,
 };
 
